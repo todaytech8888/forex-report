@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄金策略十年回测报告</title>
+    <style>
+        /* --- 全局样式 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h1 { font-size: 4rem; font-weight: 900; margin-bottom: 0.5rem; }
+        h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #1a237e; }
+        h3 { font-size: 1.8rem; font-weight: 700; }
+        p { font-size: 1.1rem; color: #555; }
+        .profit-text { color: #2e7d32; }
+        .loss-text, .card-value-risk { color: #c62828; }
+
+        /* --- Hero Section --- */
+        .hero { background-color: #ffffff; }
+        .hero .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 40px; }
+        .kpi-dashboard {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 25px 35px;
+            text-align: center;
+            min-width: 180px;
+        }
+        .card-label {
+            display: block;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .card-value {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+        }
+        .card-value-risk { font-size: 2.5rem; font-weight: 700; }
+
+        /* --- Details Section --- */
+        .details-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: #ffffff;
+        }
+        .details-section .column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* --- Download Section --- */
+        .download-section .button {
+            display: inline-block;
+            background-color: #1a237e;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .download-section .button:hover {
+            transform: translateY(-3px);
+            background-color: #000051;
+        }
+        .download-section .button-secondary {
+            background-color: #78909c;
+        }
+        .download-section .button-secondary:hover {
+            background-color: #546e7a;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>10年盈利 <span class="profit-text">$53,902.69</span></h1>
+            <p class="subtitle">基于$1,000初始资金的黄金(XAUUSD)策略回测 (2015-2025)</p>
+            <div class="kpi-dashboard">
+                <div class="card">
+                    <span class="card-label">利润因子</span>
+                    <span class="card-value">1.88</span>
+                </div>
+                <div class="card">
+                    <span class="card-label">总交易</span>
+                    <span class="card-value">844</span>
+                </div>
+                <div class="card">
+                    <span class="card-label">胜率</span>
+                    <span class="card-value">71.09%</span>
+                </div>
+                <div class="card">
+                    <span class="card-label">最大回撤</span>
+                    <span class="card-value-risk">34.09%</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>资金增长曲线</h2>
+            <p>十年间账户净值的稳定增长路径</p>
+            <img src="equity_curve.png" alt="资金增长曲线图" style="width:100%; max-width:800px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        </section>
+
+        <section class="details-section">
+            <div class="column">
+                <h3>盈利能力分析</h3>
+                <p><strong>毛收益:</strong> <span class="profit-text">$114,935.18</span></p>
+                <p><strong>毛亏损:</strong> <span class="loss-text">-$61,032.49</span></p>
+                <p><strong>平均盈利交易:</strong> $222.31</p>
+                <p><strong>平均亏损交易:</strong> -$208.30</p>
+                 <img src="win_loss_pie_chart.png" alt="胜败比例饼图" style="width:100%; max-width:250px; margin: 20px auto 0 auto;">
+            </div>
+            <div class="column">
+                <h3>风险控制</h3>
+                <p><strong>最大回撤金额:</strong> <span class="loss-text">-$5,561.43</span></p>
+                <p>该回撤发生在策略运行的早期阶段，随后被新高点迅速收复，展示了策略的恢复能力。</p>
+            </div>
+        </section>
+        
+        <section class="download-section">
+            <h2>获取完整报告</h2>
+            <p>下载完整的PDF分析报告或查看原始的MT4交易数据。</p>
+            <a href="十年回测分析.pdf" class="button" target="_blank">下载PDF报告</a>
+            <a href="2015-2025(1).htm" class="button button-secondary" target="_blank">查看原始数据</a>
+        </section>
+    </div>
+</body>
+</html>
